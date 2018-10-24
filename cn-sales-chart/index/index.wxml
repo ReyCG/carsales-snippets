@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view wx:if="{{loading}}" class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载，请稍候...</view>
+    </view>
+    <view wx:if="{{!loading}}" class="weui-panel weui-panel_access weui-panel_padding">
+      <view class="weui-panel__hd">
+        汽车整体销量行情
+        <text class="see-more" catchtap='gotoRankingPage' decode='true'>查看更多&nbsp;&gt;</text>
+      </view>
+      <view class='xltab'>
+        <text class='{{ periodClass[0] }}' data-index='1' catchtap='cnSalePeriodChange'>3个月</text>
+        <text class='{{ periodClass[1] }}' data-index='2' catchtap='cnSalePeriodChange'>6个月</text>
+        <text class='{{ periodClass[2] }}' data-index='3' catchtap='cnSalePeriodChange'>1年</text>
+        <text class='{{ periodClass[3] }}' data-index='4' catchtap='cnSalePeriodChange'>全部</text>
+      </view>
+      <view class="chart-canvas">
+        <ec-canvas wx:if="{{ !isDisposed }}"id="cnsales-line-chart" canvas-id="cnsales-line-chart" ec="{{ ecLine }}"></ec-canvas>
+      </view>
+      <button class="weui-btn more-market-btn" catchtap='gotoRankingPage' type="primary">查看更多行情</button>
+    </view>
+  </view>
+</view>
