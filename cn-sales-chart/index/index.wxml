@@ -17,7 +17,7 @@
         <text class='{{ periodClass[3] }}' data-index='4' catchtap='cnSalePeriodChange'>全部</text>
       </view>
       <view class="chart-canvas">
-        <ec-canvas wx:if="{{ !isDisposed }}"id="cnsales-line-chart" canvas-id="cnsales-line-chart" ec="{{ ecLine }}"></ec-canvas>
+        <ec-canvas id="cnsales-line-chart" canvas-id="cnsales-line-chart" ec="{{ ecLine }}"></ec-canvas>
       </view>
       <button class="weui-btn more-market-btn" catchtap='gotoRankingPage' type="primary">查看更多行情</button>
     </view>
